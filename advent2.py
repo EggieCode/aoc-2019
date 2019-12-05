@@ -26,3 +26,17 @@ def op(o, d, i):
     if r == 1202:
         print((o[3], d[o[3]], r, i))
     d[o[3]] = r
+
+# Part 2
+def p2(d):
+    z = []
+    for x in range(100):
+      for y in range(100):
+        z.append((x,y))
+    d3 = []
+    for x,y in z:
+        d2 = d.copy()
+        d2[1] = x
+        d2[2] = y
+        d3.append((x,y, importlib.reload(advent2).l(d2)))
+    return d3
